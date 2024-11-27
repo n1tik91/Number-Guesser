@@ -1,4 +1,3 @@
-
 # Number Guessing Game 🎲
 
 A fun command-line game written in Go where the user tries to guess a randomly generated number. The program provides feedback for each guess and tracks the number of attempts.
