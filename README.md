@@ -2,13 +2,7 @@
 
 A simple command-line game written in Go where the user guesses a randomly generated number between 1 and 100. This project is designed for beginners learning Go programming.
 
----
 
-## 📖 Overview
-
-The **Number Guessing Game** is a fun and interactive way to practice coding with Go. The program generates a random number and gives feedback for each user guess, guiding them toward the correct answer.
-
----
 
 ## 🚀 Features
 
