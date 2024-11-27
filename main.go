@@ -9,36 +9,35 @@ import (
 func main() {
 	// Seed the random number generator
 	rand.Seed(time.Now().UnixNano())
+
 	// Generate a random number between 1 and 100
-	targetNumber := rand.Intn(100) + 1
+	secretNumber := rand.Intn(100) + 1
 
-	var userGuess int
-	var attempts int
-
+	// Welcome message
 	fmt.Println("Welcome to the Number Guessing Game!")
-	fmt.Println("I have picked a number between 1 and 100.")
-	fmt.Println("Can you guess what it is?")
+	fmt.Println("I am thinking of a number between 1 and 100.")
 
+	// Variables for user guess and attempt count
+	var guess int
+	attempts := 0
+
+	// Game loop
 	for {
 		fmt.Print("Enter your guess: ")
-		_, err := fmt.Scan(&userGuess)
-		if err != nil {
-			fmt.Println("Invalid input. Please enter a number between 1 and 100.")
-			continue
-		}
+		fmt.Scan(&guess) // Read the user's guess
+		attempts++       // Count the attempt
 
-		attempts++
-
-		// Check the user's guess
-		if userGuess < targetNumber {
+		// Check if the guess is correct
+		if guess < secretNumber {
 			fmt.Println("Too low! Try again.")
-		} else if userGuess > targetNumber {
+		} else if guess > secretNumber {
 			fmt.Println("Too high! Try again.")
 		} else {
-			fmt.Printf("Congratulations! You guessed the number in %d attempts.\n", attempts)
-			break
+			fmt.Printf("Congratulations! You guessed it in %d attempts.\n", attempts)
+			break // Exit the loop when guessed correctly
 		}
 	}
 
-	fmt.Println("Thanks for playing!")
+	// Goodbye message
+	fmt.Println("Thank you for playing!")
 }
